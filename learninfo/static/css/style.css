@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    
+}
+body {
+    background-color: rgb(24, 23, 23);
+    overflow-x: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.title-form h2 {
+    position: relative;
+    color: white;
+    background-color: black;
+    width: 800px;
+    font-size: 30px;
+    padding: 15px;
+    text-align: center;
+}
+.logo img {
+    position: relative;
+    top: 15px;
+    left: 20px;
+    width: 290px;
+}
+form {
+    position: relative;
+    top: -50px;
+    left: 350px;
+    background-image: linear-gradient(rgb(59, 57, 57), black, rgb(31, 31, 31));
+    width: 800px;
+    height: 365px;
+    overflow: visible;
+    
+}
+button {
+    position: relative;
+    left: 248px;
+    top: 40px;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    width: 300px;
+    background-image: linear-gradient(black, rgb(0, 0, 0), rgb(255, 255, 255));
+    padding-left: 15px;
+    text-align: center;
+    height: 60px;
+    border: none;
+    outline: none;
+    border-radius: 15px ;
+   
+
+
+}
+
+button:hover {
+    background-image: linear-gradient(#282424, rgb(187, 174, 174), rgb(0, 0, 0));
+    background-image: linear-gradient(#ffffff, rgb(0, 0, 0), rgb(152, 146, 146));
+    background-image: linear-gradient(#ffffff, rgb(0, 0, 0), rgb(0, 0, 0));
+    background-image: linear-gradient(#0b0a0a, rgb(180, 176, 176), rgb(141, 132, 132));
+    color: rgb(0, 0, 0);
+}
+@keyframes dispare-text {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    
+
+    100% {opacity: 0;}
+    
+}
+form input {
+    position: relative;
+    color: white;
+    top: 40px;
+    display: flex;
+    justify-content: space-between;
+    left: 10px;
+    background-color: transparent;
+    outline: none;
+    border-top: none ;
+    border-right: none;
+    border-left: none;
+    font-size: 25px;
+    padding: 10px;
+    width: 780px;
+    text-align: center;
+    
+}
+
+form input:hover {
+    border: 2px solid blue;
+    border-top: none ;
+    border-right: none;
+    border-left: none;
+}
+table {
+    position: relative;
+    
+    top: 25px;
+    background-image: linear-gradient(black, rgb(53, 46, 46), rgb(31, 31, 30));
+}
+
+table, th, td {
+    color: white;
+    font-size: 23px;
+    border: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+td #edit {
+    text-decoration-line: underline;
+    color: green;
+}
+td #delete {
+    text-decoration: underline;
+    color: red;
+}

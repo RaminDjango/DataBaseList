@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="/static/image/R.png" alt="">
+
+    </div>
+    {% if editare_obiect %}
+    <form  action="{% url 'update' editare_obiect.id %}" method="POST">
+        {% csrf_token %}
+        <div class="title-form">
+            <h2>Database-Informati</h2>
+        </div>
+        <input placeholder="Introdu numele"  value="{{editare_obiect.name}}" type="text" name="nume"><br>
+        <input placeholder="Introdu prenume" value="{{editare_obiect.last_name}}"     type="text" name="prenume"><br>
+        <input placeholder="Introdu email"   value="{{editare_obiect.emails}}"     type="email" name="email" ><br>
+        <input placeholder="Introdu card"    value="{{editare_obiect.cards}}"     type="text" name="card"><br>
+        <button type="submit" >Save</button>
+      
+        {% for y in messages %}
+        <h1 style=" position: relative; animation: dispare-text 2s forwards; animation-delay: 5s; left: 50px; text-decoration: underline; top: -470px; color: rgb(239, 0, 0);">{{y}}</h1>
+        {% endfor %}
+        
+    </form>
+    
+    {% else %}
+    <form  action="" method="POST">
+        {% csrf_token %}
+        <div class="title-form">
+            <h2>Database-Info</h2>
+        </div>
+        <input placeholder="Introdu numele" type="text" name="nume"><br>
+        <input placeholder="Introdu prenume" type="text" name="prenume"><br>
+        <input placeholder="Introdu email" type="email" name="email" ><br>
+        <input placeholder="Introdu card" type="text" name="card"><br>
+        <button type="submit" >Save</button>
+      
+        {% for y in messages %}
+        <h1 style=" position: relative; animation: dispare-text 2s forwards; animation-delay: 5s; left: 50px; text-decoration: underline; top: -470px; color: rgb(239, 0, 0);">{{y}}</h1>
+        {% endfor %}
+        
+    </form>
+    {% endif %}
+    <table style="width: 100%;">
+    
+        <tr>
+            <th>#</th>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Email</th>
+            <th>Card-Client</th>
+            <th>Edit</th>
+            <th>Stergere</th>
+        </tr>
+        <br>
+        {% for x in tabel %}
+        <tr>    
+            <td>{{forloop.counter}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.last_name}}</td>
+            <td>{{x.emails}}</td>
+            <td>{{x.cards}}</td>
+            <td><a id="edit" href="{% url 'edits' x.id %}">Edit</a></td>
+            <td><a id="delete" href="{% url 'delete' x.id  %}" href="">Sterge</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+   
+</body>
+</html>
